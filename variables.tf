@@ -3,13 +3,18 @@ variable "location" {
   type        = string
 }
 
+variable "name" {
+  description = "The name to assign to the API Management instance."
+  type = string
+}
+
 variable "rg_name" {
   description = "The name of the resource group to deploy resources into"
   type        = string
 }
 
 variable "tags" {
-  description = "A list of tags used for deployed services."
+  description = "A map of tags used for deployed services."
   type        = map(string)
 }
 
@@ -28,10 +33,6 @@ variable "skuCount" {
   description = "The instance size of this API Management service. @allowed([ 0, 1, 2 ])"
   type        = string
   default     = "0"
-}
-
-variable "name" {
-  type = string
 }
 
 variable "publisher_email" {
